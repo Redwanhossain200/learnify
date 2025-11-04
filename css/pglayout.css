@@ -1,0 +1,70 @@
+.one{
+  width: 100px;
+  height: 100px;
+  background-color: rgba(228, 128, 6, 0.595);
+  border: 2px solid black ;
+}
+.section{
+  width: 50px;
+  height: 100px;
+  float: left;
+  background-color: rgb(35, 160, 160);
+}
+.aside{
+  float: left;
+  width: 50px;
+  height: 100px;
+}
+.section:hover{
+  background-color: darkgray;
+  color: whitesmoke;
+}
+.aside:hover{
+  background-color: darkgray;
+  color: white;
+}
+.main1{
+  width: 200px;
+  height: 200px;
+  border-bottom: 2px greenyellow solid;
+  border-top: 2px solid blue;
+  border-left: 2px solid black;
+  border-right: 2px solid purple;
+  border-radius: 8px;
+} 
+.main1:hover{
+  background-color: springgreen;
+  color: white;
+  border-radius:2px solid ;
+  border:2px black solid;
+}
+.margin{
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  border-left: 5px solid #740058;
+  border-right: 5px solid #8d006b;
+  border-top: 5px solid #b00085;
+  border-bottom: 5px solid 	#ce009b ;
+  border-radius: 3.5px;
+}
+.margin1{
+  width:370px ;
+  height: 170px;
+  color:rgb(128, 0, 0);
+  background-color: aliceblue;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  border: 5px solid rgb(130, 23, 188);
+  border-radius: 5px;
+  margin: 10px 10px 10px 10px ;
+}
+.margin1:hover{
+   width:370px ;
+  height: 170px;
+  background-color: rgb(159, 198, 233);
+  color: white;
+}

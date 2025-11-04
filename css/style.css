@@ -1,0 +1,40 @@
+.one{
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+}
+#main{
+width: 500px;
+height: 250px;
+background-color:aqua;
+float: left;
+}
+#home{
+width: 500px;
+height: 250px;
+background-color: yellow;
+}
+.col1{
+    width: 250px;
+    height: 250px;
+    background-color:chocolate;
+    float: left;
+}
+.col2{
+    width: 250px;
+    height: 250px;
+    background-color:brown;
+    float: left;
+}
+.col3{
+    width: 250px;
+    height: 250px;
+    background-color:yellowgreen;
+    float: left;
+}
+.col4{
+    width: 250px;
+    height: 250px;
+    background-color:grey;
+    float: left;
+}

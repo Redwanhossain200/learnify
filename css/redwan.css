@@ -1,0 +1,56 @@
+.one{
+  width:400px;
+  height: 200px;
+  background-color: #022820;
+}
+#row1{
+  width: 500px;
+  height: 80px;
+  background-color: #00b894;
+}
+#row2{
+  width: 500px;
+  height: 60px;
+  background-color: chocolate;
+}
+#row3{
+  width: 500px;
+  height: 60px;
+  background-color:thistle;
+}
+.two{
+  width: 166px;
+  height: 26px;
+  background-color:#fab1a0;
+  float: left;
+}
+.three{
+  width: 166px;
+  height: 26px;
+  background-color: #b2bec3;
+  float: left;
+}
+.four{
+  width: 168px;
+  height: 26px;
+  background-color:yellowgreen;
+  float: left;
+}
+.five{
+  width: 500px;
+  height: 60px;
+  background-color:#00b894;
+  float:left;
+}
+.six{
+  width: 250px;
+  height: 30px;
+  background-color:#0984e3;
+  float: left;
+}
+.seven{
+  width: 250px;
+  height: 30px;
+  background-color:#6c5ce7;
+  float: left;
+}

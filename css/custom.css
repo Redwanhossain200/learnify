@@ -1,0 +1,90 @@
+body {
+  margin: 10px;
+}
+div{
+    background-color: tomato;
+    padding: 20px 30px;
+    margin-bottom: 12px;
+    border:1px solid black;
+    }
+.two{
+    background-color: aqua;
+}
+.three{
+    background-color:bisque;flex: content;fill-opacity: initial;
+}
+.four{
+    background-color:burlywood;
+}
+.five{
+background-color: coral;
+}
+.six{
+    background-color: cornflowerblue;
+}
+.seven{
+    background-color: crimson;
+}
+.nine{
+    background-color: cadetblue;
+}
+.ten{
+    background-color: chartreuse;
+}
+.eleven{
+    background-color: chocolate;
+}
+.twelve{
+    background-color: brown;
+}
+.fourteen{
+    background-color: darkcyan;
+}
+.fifteen{
+    background-color: darkgoldenrod;
+}
+.sixteen{
+    background-color:darkgray;
+}
+.seventeen{
+    background-color: cornsilk;
+}
+.eighteen{
+    background-color: rgb(9, 145, 9);
+}
+.nineteen{
+    background-color: blueviolet;
+}
+.twenty{
+    background-color: darkgrey;
+}
+.twenty-one{
+    background-color: darksalmon;
+}
+.twenty-two{
+    background-color: darkseagreen;
+}
+.twenty-three{
+    background-color: olive;
+}
+.twenty-four{
+    background-color: lightcoral;
+}
+.twenty-five{
+    background-color: darkkhaki;
+}
+.twenty-six{
+    background-color: darkmagenta;
+}
+.thirty{
+    background-color:lightgrey;
+}
+.for{
+    background-color: white;
+    border: 0px;
+}
+.nai{
+    background-color: white;
+    border: 0px;
+    animation: both;
+}

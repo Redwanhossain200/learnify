@@ -1,0 +1,61 @@
+.main{
+  width: 500px;
+  height: 500px;
+  background-color:orange;;
+}
+#one{
+  width: 500px;
+  height: 250px;
+}
+#two{
+  width: 500px;
+  height: 250px;
+}
+#three{
+  width: 500px;
+  height: 250px;
+}
+.yo{
+  width: 250px;
+  height: 250px;
+  background-color:coral;
+  float: left;
+  text-transform:uppercase;
+  color: white;
+  
+}
+.to{
+  width: 250px;
+  height: 250px;
+  background-color:sienna;
+  float: left;
+  text-transform:uppercase;
+}
+.go{
+  width: 250px;
+  height: 250px;
+  background-color:chocolate;
+  float: left;
+  text-transform:uppercase;
+}
+.no{
+  width: 250px;
+  height: 250px;
+  background-color:powderblue;
+  float: left;
+  text-transform:uppercase;
+}
+.fo{
+  width: 250px;
+  height: 250px;
+  background-color:tomato;
+  float: left;
+  text-transform:uppercase;
+}
+.ko{
+  width: 250px;
+  height: 250px;
+  background-color:darkgray;
+  float: left;
+  text-transform:uppercase;
+}
