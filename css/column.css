@@ -1,0 +1,11 @@
+.main{
+  height: 300px;
+  column-count: 4;
+  /* column-width: 100%; */
+  column-gap: 30px;
+  column-fill: auto;
+  column-rule: 5px solid red; 
+}
+.h2{
+  column-span:all;
+}

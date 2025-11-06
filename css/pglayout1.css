@@ -2,12 +2,18 @@
   width: 400px;
   height: 200px;
   border-left: 5px solid #740058;
+  margin: auto ;
   border-right: 5px solid #8d006b;
   border-top: 5px solid #b00085;
   border-bottom: 5px solid 	#ce009b ;
   border-radius: 3.5px;
   transform: translate(20px,20px);
+  opacity: 0.7;
+  transition: 1.5s;
   box-shadow: 0px 0px 15px 1.5px #A00079;
+}
+.margin:hover{
+  opacity: 1;
 }
 .margin1{
   width:330px ;
@@ -27,26 +33,43 @@
   border: 6px solid rgb(130, 23, 188);
   border-radius: 5px; 
   margin: 15px 15px 15px 15px ;
-  box-shadow: 0px 0px 10px 3px #6C553E;
+  box-shadow: 0px 0px 5px 0.5px #6C553E;
   padding: 15px 15px 15px 15px;
 }
-/* .margin1:hover{
-  width:330px ;
-  height: 130px;
-  background-color: rgb(159, 198, 233);
-  color: white;
-  text-shadow: none;
-} */
-/* .bg {
+/* .col1{
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  float: left;
+  background-color: azure;
+  font-size: 30px;
+}
+.col2{
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  float: left;
+  background-color: antiquewhite;
+  font-size: 30px;
+}
+.col3{
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  float: left;
+  background-color: aquamarine;
+  font-size: 30px;
+}
+.header{
   width: 100%;
-  height: 100%;
-  border: 4px solid palegreen;
-  padding: 13px;
-  color: rgba(36, 171, 12, 0.8);
-  font-size: x-large;
-  background-image: url('../1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  height: 50px;
+  background-color: tomato;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  position: sticky;
+  top: 5px;
 } */
