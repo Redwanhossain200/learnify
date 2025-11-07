@@ -1,11 +1,26 @@
+.main{
+  border: 400px;
+  height: 400px;
+  border: 2px red solid;
+  font-size: 20px;
+  overflow: hidden;
+  resize: both;
+  text-indent: 25%;
+}
 h2{
   color: blue;
   display: inline-block;
   display: list-item;
 }
-.main{
+.one{
   width: 500px;
   height: 500px;
+  border: 2px solid green;
   margin: auto;
-  border: 2px solid black;
+  display:inline-table;
+}
+.one div{
+  height: 70px;
+  width: 500px;
+  border: 2px solid red;
 }
