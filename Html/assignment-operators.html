@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment oparators</title>
+</head>
+<body style="margin: auto;background-color: coral;" align="center">
+  <h1 id="one" style="margin: auto;width: 100%;height: 50px;color: teal;"></h1>
+  <hr>
+  <h1 id="two" style="margin: auto;width: 100%;height: 50px;color: silver;"></h1>
+  <hr>
+  <h1 id="three" style="margin: auto;width: 100%;height: 50px;color: slategrey;"></h1>
+  <hr>
+  <h1 id="four" style="margin: auto;width: 100%;height: 50px;color: darkgreen;"></h1>
+  <hr>
+  <h1 id="six" style="margin: auto;width: 100%;height: 50px;color: purple;"></h1>
+  <hr>
+  <h1 id="five" style="margin: auto;width: 100%;height: 50px;color: darkblue;"></h1>
+</body>
+<script>
+  //simple assignment
+  a = 5;
+  z = 6;
+  z = a;
+  document.getElementById('one').innerHTML = z;
+
+  //Add and assignment
+  a = 5;
+  z = 6;
+  z += a;
+  document.getElementById('two').innerHTML = z;
+  
+  //subtract and assignment
+  a = 5;
+  z = 6;
+  z -= a;
+  document.getElementById('three').innerHTML = z;
+
+  
+  //divide and assignment
+  a = 5;
+  z = 25;
+  z /= a;
+  document.getElementById('four').innerHTML = z;
+  
+  //modulus and assignment
+  a = 5;
+  z = 6;
+  z %= a;
+  document.getElementById('five').innerHTML = z;
+  
+  //multiply and assignment
+  a = 5;
+  z = 60;
+  z %= a;
+document.getElementById('six').innerHTML = z;
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logical & Ternary Oprators</title>
+</head>
+<body style="background-color: sandybrown;">
+  <h1 id="res" style="margin: auto;width: 100%;height: 100px;"></h1>
+  <hr>
+  <h1 id="re" style="margin: auto;width: 100%;height: 100px;"></h1>
+  <hr>
+  <h1 id="one" style="margin: auto;width: 100%;height: 100px;"></h1>
+</body>
+<script>
+  
+  // logical AND
+  var x = 0; //false
+  var y = 1; //true
+  var z = x && y;
+  document.getElementById('res').innerHTML = z;
+
+  //logical OR
+  var x = 0; //false
+  var y = 1; //true
+  var z = x || y;
+  document.getElementById('re').innerHTML = z;
+
+  //ternary oparator
+  var x = 7;
+  var y = 6;
+  var z;
+  z = x > y ? "yes" : "no";
+  document.getElementById('one').innerHTML = z;
+</script>
+</html>
