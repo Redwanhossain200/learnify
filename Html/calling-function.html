@@ -7,18 +7,30 @@
   <meta name="description" content="This is a sample web page structure.">
   <meta name="keywords" content="html, meta tags, web development, form , semantic">
   <meta name="author" content="Redwan Hossain">
-  <link rel="shortcut icon" href="../Image/download.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../Image/logo.png" type="image/x-icon">
   <title>Calling user function</title>
 </head>
 
 <body>
-  <input type="text" value="name" id="name" placeholder="Enter your name">
+
+  <input type="text" id="name">
+
   <button onclick="greet()">Greet</button>
+
+  <div class="greet">
+
+  </div>
+
 </body>
+
 <script>
+
   function greet() {
-    alert("yes");
+    var name = document.getElementById("name").value;
+    var string = "Hello, " + name + ", Welcome to our website!";
+    document.getElementsByClassName('greet')[0].innerHTML = string;
   }
+
 </script>
 
 </html>
