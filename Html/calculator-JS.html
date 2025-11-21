@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="This is a sample web page structure.">
   <meta name="keywords" content="html, meta tags, web development, calculator , semantic">
@@ -9,7 +10,39 @@
   <link rel="shortcut icon" href="../Image/logo.png" type="image/x-icon">
   <title>Document</title>
 </head>
+
 <body>
+  <input type="number" name="first" id="first" step="any">
+  <select name="operator" id="ope">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">x</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" name="second" id="second" step="any">
+  <br><br>
+  <button onclick="cal()">Calculate</button>
+  <input type="text" name="result" id="res" readonly>
   
 </body>
+<script>
+  function cal() {
+    var first = parseFloat(document.getElementById("first").value);
+    var second = parseFloat(document.getElementById("second").value);
+    var ope = document.getElementById('ope').value;
+    var result;
+    if (ope === "+") {
+      result = first + second;
+    } else if (ope === "-") {
+      result = first - second;
+    } else if (ope === "*") {
+      result = first * second;
+    } else if (ope === "/") {
+      result = first / second;
+    }
+    document.getElementById("res").value = result;
+  }
+
+</script>
+
 </html>
