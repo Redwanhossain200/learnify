@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is a sample web page structure.">
+  <meta name="keywords" content="html, meta tags, web development, calculator , semantic">
+  <meta name="author" content="Redwan Hossain">
+  <link rel="shortcut icon" href="../Image/logo.png" type="image/x-icon">
+  <title>Prompt function</title>
+</head>
+
+<body>
+  Name: <i id="result"></i>
+  <br>
+  <button onclick="call()">Call</button>
+</body>
+<script>
+  function call() {
+    var name = prompt("Enter your name!", "");
+    // document.write(result);
+    document.getElementById('result').innerHTML = name;
+  }
+</script>
+
+</html>
