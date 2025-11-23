@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scroll Light Effect — HTML + CSS + JS</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      /* page background */
+      --card: #0b1220;
+      --accent: #7c5cff;
+      --light-size: 30vmax;
+      /* size of the 'light' */
+      --x: 50%;
+      --y: 50%;
+    }
+
+    /* reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1000px 600px at 10% 10%, rgba(124, 92, 255, 0.08), transparent 10%),
+        linear-gradient(180deg, #071025 0%, var(--bg) 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* light overlay */
+    .light-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      /* try 'overlay' or 'soft-light' depending on the look you want */
+      background: radial-gradient(circle at var(--x) var(--y), rgba(255, 255, 230, 0.95) 0%, rgba(124, 92, 255, 0.35) 10%, rgba(0, 0, 0, 0) 40%);
+      opacity: 0.9;
+      transition: background 120ms linear;
+      z-index: 20;
+    }
+
+    /* content */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    p.lead {
+      opacity: 0.9;
+      margin-bottom: 2rem
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+      margin-bottom: 2rem;
+    }
+
+    section {
+      margin: 6rem 0
+    }
+
+    .spacer {
+      height: 120vh
+    }
+
+    /* make the page long so you can scroll */
+
+    /* example highlight elements that react to light */
+    .glow-strong {
+      background: linear-gradient(90deg, rgba(124, 92, 255, 0.14), rgba(66, 179, 255, 0.06));
+      padding: 1.2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(124, 92, 255, 0.12);
+      transition: box-shadow 200ms ease;
+    }
+
+    .glow-strong:hover {
+      box-shadow: 0 10px 40px rgba(124, 92, 255, 0.18)
+    }
+
+    footer {
+      opacity: 0.8;
+      margin-top: 4rem;
+      text-align: center
+    }
+
+    /* small helpers for mobile performance (reduce update frequency) */
+    @media (max-width:600px) {
+      :root {
+        --light-size: 60vmax
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="light-overlay" id="light"></div>
+
+  <main class="wrap">
+    <h1>Scroll with Light Effect</h1>
+    <p class="lead">A subtle moving light that follows scroll position — pure HTML/CSS with tiny JS to update variables.
+    </p>
+
+    <div class="card glow-strong">
+      <h2>Intro</h2>
+      <p>This demo uses a fixed full-screen radial-gradient overlay. JavaScript updates CSS custom properties
+        (<code>--x</code> and <code>--y</code>) while you scroll, repositioning the bright spot to give a "spotlight"
+        effect that moves as the page scrolls.</p>
+    </div>
+
+    <section>
+      <div class="card">
+        <h3>Section 1</h3>
+        <p>Content here. Scroll down to see the light move — it will track the visual center of the viewport relative to
+          the document scroll position.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h3>Section 2</h3>
+        <p>More content. The overlay uses <code>mix-blend-mode: screen</code> to brighten and tint underlying elements.
+        </p>
+      </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <footer>
+      Built with HTML, CSS and a pinch of JavaScript. Customize colors or blend modes for different moods.
+    </footer>
+  </main>
+
+  <script>
+    // Move the light based on scroll position (and optionally mouse for extra interactivity)
+    (function () {
+      const el = document.getElementById('light');
+      let ticking = false;
+
+      function update() {
+        // compute a position based on the scroll progress
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        const scroll = docH > 0 ? window.scrollY / docH : 0;
+
+        // choose x position (we keep centered horizontally here)
+        const x = 50; // percent
+
+        // y moves from 20% to 80% as you scroll (tweak these values for different travel)
+        const yMin = 20; // percent
+        const yMax = 80; // percent
+        const y = yMin + (yMax - yMin) * scroll;
+
+        // apply to css variables
+        document.documentElement.style.setProperty('--x', x + '%');
+        document.documentElement.style.setProperty('--y', y + '%');
+
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+
+      // Optional: make the light respond slightly to mouse movement for a more dynamic feel
+      function onMove(e) {
+        // small offset to add to the scroll-calculated y
+        const percentX = (e.clientX / window.innerWidth) * 100;
+        const percentY = (e.clientY / window.innerHeight) * 100;
+        // blend mouse with scroll by averaging
+        const curX = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--x')) || 50;
+        const curY = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--y')) || 50;
+        // lerp toward mouse a bit for smoothness
+        document.documentElement.style.setProperty('--x', (curX * 0.85 + percentX * 0.15) + '%');
+        document.documentElement.style.setProperty('--y', (curY * 0.85 + percentY * 0.15) + '%');
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      window.addEventListener('mousemove', onMove);
+
+      // initialize
+      update();
+    })();
+  </script>
+</body>
+
+</html>
