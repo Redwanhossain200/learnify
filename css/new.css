@@ -1,0 +1,203 @@
+/* General Setup */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Navbar */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ff136f !important;
+}
+
+/* Helper Classes */
+.z-index-1 { z-index: 1; }
+.section-title { position: relative; display: inline-block; }
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #ff136f;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 100px; /* Space for fixed nav */
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, #fceae8 0%, #fff0ed 100%);
+    position: relative;
+}
+
+.price-tag {
+    color: #ff136f;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+/* Decorative Circles in Hero */
+.circle-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    background: #ffe3e3;
+    top: -50px;
+    left: -50px;
+}
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    background: #ffd1e8;
+    bottom: 20px;
+    right: 20px;
+}
+
+.hero-image {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Categories with Gradient */
+.cat-watch { background: linear-gradient(45deg, #ffa500, #ffc107); }
+.cat-bag { background: linear-gradient(45deg, #d5348a, #ff69b4); }
+.cat-shoes { background: linear-gradient(45deg, #4b7ee0, #007bff); }
+
+.cat-card {
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cat-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Product Cards */
+.product-card {
+    background: #fff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+}
+
+.product-img-box {
+    background: #f6f6f6;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.product-card:hover .product-img-box {
+    background: #ffeef4; /* Subtle pink tint on hover */
+}
+
+.product-card img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1) rotate(-5deg); /* Product zoom and tilt effect */
+}
+
+/* Main Button Style */
+.panda-btn-buy-now {
+    background-image: linear-gradient(to right, #ff589b 0%, #ff136f 51%, #ff589b 100%);
+    background-size: 200% auto;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.5s;
+    box-shadow: 0 5px 15px rgba(255, 19, 111, 0.4);
+}
+
+.panda-btn-buy-now:hover {
+    background-position: right center; /* Gradient animation */
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Newsletter Section */
+.newsletter-bg {
+    background-color: #fceae8;
+    height: 350px;
+    position: relative;
+}
+
+/* Abstract blobs for background */
+.shape-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.5;
+}
+.shape-1 {
+    width: 100px;
+    height: 100px;
+    background: #ff589b;
+    top: 20%;
+    left: 10%;
+}
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    background: #ffa500;
+    bottom: 10%;
+    right: 10%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+        width: 100% !important;
+    }
+    
+    .newsletter-form input {
+        border-radius: 50px !important;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .newsletter-form button {
+        border-radius: 50px !important;
+        width: 100%;
+    }
+    
+    .display-3 { font-size: 2.5rem; }
+    
+    .hero-bg { padding: 30px !important; }
+}

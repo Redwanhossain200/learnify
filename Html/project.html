@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Redwan Hossain">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://img.icons8.com/?size=96&id=tpfCW2vDaYKA&format=png" type="image/x-icon">
+  <title>Panda Commerce | Simple Landing</title>
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/project.css">
+
+</head>
+
+<body>
+
+  <header class="wrap">
+    <nav class="nav">
+      <a class="logo" href="#"> <img src="assests/logo.png" alt="Panda Commerce Logo"> </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shoes">Shoes</a></li>
+        <li><a href="#bag">Backpack</a></li>
+        <li><a href="#sub">Subscribe</a></li>
+      </ul>
+
+      <div class="bar" id="bar">&#9776;</div>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="wrap">
+    <section id="home">
+      <div class="hero">
+        <div class="left">
+          <h1 class="k head">Mi LED TV 4A Pro 32</h1>
+          <p class="k desc">Compact smart TV with clear display and smart features. Perfect for living room or bedroom.
+          </p>
+          <div class="k price">$1289</div>
+          <button class="btn">Buy Now</button>
+        </div>
+
+        <img class="hero-img" src="assests/hero-tv.png" alt="Mi LED TV 4A Pro 32">
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section>
+      <h2 class="title">Categories</h2>
+      <div class="grid-3">
+        <div class="cat c-watch">
+          <div>
+            <strong>Watch</strong>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.9)">Trendy</div>
+          </div>
+          <img src="assests/category-watch.png" alt="watch">
+        </div>
+
+        <div class="cat c-bag">
+          <div>
+            <strong>Bag</strong>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.9)">Daily use</div>
+          </div>
+          <img src="assests/category-bag.png" alt="bag">
+        </div>
+
+        <div class="cat c-shoes">
+          <div>
+            <strong>Shoes</strong>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.9)">Comfort</div>
+          </div>
+          <img src="assests/category-shoe.png" alt="shoes">
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOES -->
+    <section id="shoes">
+      <h2 class="title">Shoes</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="assests/shoe-1.png" alt="supply 350" class="img-2">
+          <h3>Supply 350</h3>
+          <p>Comfortable runner shoe.</p>
+          <h4>$120</h4>
+          <button class="btn-1">Buy Now → </button>
+        </div>
+
+        <div class="card">
+          <img src="assests/shoe-2.png" alt="nike 360" class="img-2">
+          <h3>Nike 360</h3>
+          <p>Lightweight and stylish.</p>
+          <h4>$320</h4>
+          <button class="btn-1">Buy Now → </button>
+        </div>
+
+        <div class="card">
+          <img src="assests/shoe-3.png" alt="red airmax" class="img-2">
+          <h3>Red Airmax</h3>
+          <p>Premium cushioning.</p>
+          <h4>$350</h4>
+          <button class="btn-1">Buy Now → </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKPACK -->
+    <section id="bag">
+      <h2 class="title">Backpack</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="assests/bag-1.png" alt="red bag">
+          <h3>Red Laltu Bag</h3>
+          <p>Everyday companion.</p>
+          <h4>$120</h4>
+          <button class="btn-1">Buy Now → </button>
+        </div>
+
+        <div class="card">
+          <img src="assests/bag-2.png" alt="blue bag">
+          <h3>Blue Niltu Bag</h3>
+          <p>Water resistant.</p>
+          <h4>$320</h4>
+          <button class="btn-1">Buy Now → </button>
+        </div>
+
+        <div class="card">
+          <img src="assests/bag-3.png" alt="black bag">
+          <h3>Black Kaltu Bag</h3>
+          <p>Spacious with pockets.</p>
+          <h4>$350</h4>
+          <button class="btn-1">Buy Now → </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section id="sub">
+      <div class="sub-wrap">
+        <h2>LET'S STAY IN TOUCH</h2>
+        <p>Get updates on sales specials and more</p>
+        <div class="sub-row">
+          <input type="email" placeholder="Enter your email" aria-label="email">
+          <button class="btn">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <small>©2025. Panda Commerce. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // simple menu toggle for small screens
+    const bar = document.getElementById('bar');
+    const menu = document.getElementById('menu');
+    bar && bar.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+
+  </script>
+</body>
+
+</html>

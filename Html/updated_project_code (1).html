@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Commerce | Stable Build</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- CLEANED + FIXED VERSION (NO JS ERRORS) --- */
+
+    :root {
+      --wrap-max: 1200px;
+      --gap: 18px;
+      --bg-soft: #fceae8;
+      --pink1: #ff589b;
+      --pink2: #ff136f;
+      --transition: 0.35s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Poppins, sans-serif;
+    }
+
+    .wrap {
+      width: 90%;
+      max-width: var(--wrap-max);
+      margin: auto;
+    }
+
+    section {
+      margin: 3rem 0;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #111;
+      transition: .3s;
+    }
+
+    .menu a:hover {
+      color: var(--pink1);
+    }
+
+    .bar {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--bg-soft);
+      padding: 28px;
+      border-radius: 12px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .hero-img {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* GRID */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+
+    .cat {
+      padding: 16px;
+      border-radius: 12px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 16px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px #0001;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: #111;
+      color: #eee;
+    }
+
+    body.dark .card {
+      background: #222;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 1.4rem;
+    }
+
+    /* LOADER */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      transition: .5s;
+    }
+
+    .loader-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 5px solid #ddd;
+      border-top-color: var(--pink1);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* MOUSE GLOW */
+    #glow {
+      position: fixed;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 0, 120, .25), transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @media(max-width:640px) {
+
+      .grid-3,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .bar {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .menu.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-circle"></div>
+  </div>
+  <div id="glow"></div>
+
+  <header class="wrap">
+    <nav class="nav">
+      <span id="darkToggle" class="dark-toggle">☾</span>
+      <a class="logo" href="#"><strong>Panda</strong></a>
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shoes">Shoes</a></li>
+        <li><a href="#bag">Backpack</a></li>
+        <li><a href="#sub">Subscribe</a></li>
+      </ul>
+      <div id="bar" class="bar">☰</div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section id="home">
+      <div class="hero">
+        <div>
+          <h1>Mi LED TV 4A Pro 32</h1>
+          <p>Compact smart TV with clear display.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <img class="hero-img" src="assets/hero-tv.png" alt="TV">
+      </div>
+    </section>
+
+    <section>
+      <h2>Categories</h2>
+      <div class="grid-3">
+        <div class="cat" style="background:#ffa500">Watch <img src="assets/category-watch.png"></div>
+        <div class="cat" style="background:#d5348a">Bag <img src="assets/category-bag.png"></div>
+        <div class="cat" style="background:#4b7ee0">Shoes <img src="assets/category-shoe.png"></div>
+      </div>
+    </section>
+
+    <section id="shoes">
+      <h2>Shoes</h2>
+      <div class="cards">
+        <div class="card"><img src="assets/shoe-1.png">
+          <h3>Supply 350</h3>
+          <p>Comfort running shoe.</p>
+        </div>
+        <div class="card"><img src="assets/shoe-2.png">
+          <h3>Nike 360</h3>
+          <p>Lightweight comfort.</p>
+        </div>
+        <div class="card"><img src="assets/shoe-3.png">
+          <h3>Red Airmax</h3>
+          <p>Premium cushioning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="bag">
+      <h2>Backpack</h2>
+      <div class="cards">
+        <div class="card"><img src="assets/bag-1.png">
+          <h3>Red Bag</h3>
+        </div>
+        <div class="card"><img src="assets/bag-2.png">
+          <h3>Blue Bag</h3>
+        </div>
+        <div class="card"><img src="assets/bag-3.png">
+          <h3>Black Bag</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="sub">
+      <div class="sub-wrap">
+        <h2>LET'S STAY IN TOUCH</h2>
+        <input type="email" placeholder="Email">
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap"><small>© 2025 Panda Commerce</small></footer>
+
+  <script>
+    // Run AFTER DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+
+      const bar = document.getElementById('bar');
+      const menu = document.getElementById('menu');
+      const toggle = document.getElementById('darkToggle');
+      const loader = document.getElementById('loader');
+      const glow = document.getElementById('glow');
+
+      // SAFETY CHECKS (prevents null errors)
+      if (!bar || !menu || !toggle || !loader || !glow) {
+        console.warn('One or more elements missing.');
+        return;
+      }
+
+      bar.onclick = () => menu.classList.toggle('open');
+
+      toggle.onclick = () => {
+        document.body.classList.toggle('dark');
+        toggle.textContent = document.body.classList.contains('dark') ? '☀' : '☾';
+      };
+
+      window.addEventListener('mousemove', e => {
+        glow.style.top = e.clientY + 'px';
+        glow.style.left = e.clientX + 'px';
+      });
+
+      window.addEventListener('load', () => {
+        loader.style.opacity = 0;
+        setTimeout(() => loader.remove(), 600);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

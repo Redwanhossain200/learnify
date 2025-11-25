@@ -1,0 +1,135 @@
+/* Google Fonts Import done in HTML, applying here */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+  /* Khub halka sadar moddhe ekta premium feel */
+}
+
+/* Navbar Links */
+.nav-link {
+  color: #444 !important;
+  font-weight: 500;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff136f !important;
+}
+
+/* Hero Section */
+.hero-bg {
+  background-color: #fceae8;
+  /* Halka pink/orange background */
+  transition: transform 0.3s;
+}
+
+/* Hero Image Floating Animation */
+.hero-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Categories Colors */
+.cat-watch {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  /* Watch - Orange Gradient */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cat-bag {
+  background: linear-gradient(135deg, #d5348a, #c02678);
+  /* Bag - Pink Gradient */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cat-shoes {
+  background: linear-gradient(135deg, #4b7ee0, #2c5cb8);
+  /* Shoes - Blue Gradient */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Category Hover Effect */
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Product Cards */
+.panda-product-card {
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+}
+
+.panda-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* Custom Button (Gradient) */
+.panda-btn-buy-now {
+  background-image: linear-gradient(to bottom, #ff589b 0%, #ff136f 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-image 0.5s, transform 0.2s;
+}
+
+.panda-btn-buy-now:hover {
+  background-image: linear-gradient(to bottom, #ff136f 0%, #ff589b 100%);
+  color: #fff;
+  transform: scale(1.05);
+  /* Button ektu boro hobe hover korle */
+}
+
+/* Newsletter Input Responsive Fix */
+@media (max-width: 640px) {
+  .newsletter-form {
+    flex-direction: column;
+    width: 100% !important;
+  }
+
+  .newsletter-form input {
+    border-radius: 50px !important;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .newsletter-form button {
+    border-radius: 50px !important;
+    width: 100%;
+  }
+
+  /* Category mobile spacing */
+  .cat-card {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+  color: #4E4E4E;
+}
+
+/* Background Colors for Specific Sections */
+.orange-bg {
+  background-color: #fceae8;
+  /* Hero & Newsletter light orange/pink tint */
+}
+
+.text-muted {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #707070;
+}
+
+.container my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+
+}
+
+.cat-watch {
+  background-color: #ffa500;
+  /* Orange */
+}
+
+.cat-bag {
+  background-color: #d5348a;
+  /* Pink */
+}
+
+.cat-shoes {
+  background-color: #4b7ee0;
+  /* Blue */
+}
+
+/* Card Styles */
+.cat-card {
+  transition: transform 0.3s ease;
+}
+
+.cat-card:hover {
+  transform: scale(1.05);
+}
+
+.panda-card {
+  border-radius: 10px;
+}
+
+.panda-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Button Styles */
+.panda-btn-buy-now {
+  background-image: linear-gradient(to bottom, #ff589b 0%, #ff136f 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.panda-btn-buy-now:hover {
+  background-image: linear-gradient(to bottom, #ff136f 0%, #ff589b 100%);
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+
+/* Laptop (max-width 1200px) */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+    /* Font size adjustment for Hero */
+  }
+}
+
+/* Tablet (max-width 992px) */
+@media (max-width: 992px) {
+  .cat-card {
+    margin-bottom: 20px;
+    /* Wrap logic handled by Bootstrap Grid, adding margin */
+  }
+}
+
+/* Mobile (max-width: 640px) */
+@media (max-width: 640px) {
+
+  /* Categories stack vertically and take full width */
+  .cat-card {
+    width: 100%;
+    justify-content: center;
+    /* Content center aligned */
+    margin-bottom: 15px;
+  }
+
+  /* Newsletter input and button stack */
+  #subscribe input {
+    width: 100% !important;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.font {
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: bold;
+  text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.font-2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 41px;
+  font-weight: 500;
+  color: #FF136F;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
