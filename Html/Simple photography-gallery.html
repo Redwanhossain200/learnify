@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Photography Gallery</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #071021 100%);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 32px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+      cursor: pointer;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform .45s cubic-bezier(.2, .9, .3, 1);
+      vertical-align: middle;
+    }
+
+    .card:hover img {
+      transform: scale(1.05)
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+      color: var(--white);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 8px;
+      height: 100%;
+    }
+
+    .caption {
+      align-self: flex-end;
+      font-size: 14px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .meta {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(2, 6, 23, 0.7);
+      z-index: 1000;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      display: flex
+    }
+
+    .lightbox-content {
+      max-width: 1000px;
+      max-height: 90vh;
+      width: 100%;
+      position: relative;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 30px;
+      padding: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-prev {
+      left: -10px
+    }
+
+    .nav-next {
+      right: -10px
+    }
+
+    /* Responsive */
+    @media (max-width:900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .card img {
+        height: 180px
+      }
+    }
+
+    @media (max-width:520px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .gallery {
+        grid-template-columns: 1fr
+      }
+
+      .card img {
+        height: 260px
+      }
+    }
+
+    /* small caption badge */
+    .badge {
+      background: rgba(0, 0, 0, 0.45);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Simple Photography Gallery</h1>
+        <p>A clean responsive gallery with lightbox — HTML, CSS & minimal JS.</p>
+      </div>
+      <div class="meta">Tip: click an image to open</div>
+    </header>
+
+    <main>
+      <div class="gallery" id="gallery">
+        <!-- Each .card has data-index so JS can open correct image -->
+        <div class="card" data-index="0" tabindex="0">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+            alt="Mountain at sunrise">
+          <div class="overlay">
+            <div class="caption">Mountain at sunrise</div>
+            <div class="badge">Nature</div>
+          </div>
+        </div>
+
+        <div class="card" data-index="1" tabindex="0">
+          <img
+            src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+            alt="Forest path">
+          <div class="overlay">
+            <div class="caption">Forest path</div>
+            <div class="badge">Outdoors</div>
+          </div>
+        </div>
+
+        <div class="card" data-index="2" tabindex="0">
+          <img
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+            alt="City skyline at night">
+          <div class="overlay">
+            <div class="caption">City skyline</div>
+            <div class="badge">Urban</div>
+          </div>
+        </div>
+
+        <div class="card" data-index="3" tabindex="0">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+            alt="Desert dunes">
+          <div class="overlay">
+            <div class="caption">Desert dunes</div>
+            <div class="badge">Landscape</div>
+          </div>
+        </div>
+
+        <div class="card" data-index="4" tabindex="0">
+          <img
+            src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+            alt="Seaside cliff">
+          <div class="overlay">
+            <div class="caption">Seaside cliff</div>
+            <div class="badge">Coast</div>
+          </div>
+        </div>
+
+        <div class="card" data-index="5" tabindex="0">
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+            alt="Starry sky">
+          <div class="overlay">
+            <div class="caption">Starry sky</div>
+            <div class="badge">Night</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Lightbox markup -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content" role="dialog" aria-modal="true">
+      <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous">‹</button>
+      <div style="position:relative;">
+        <button class="close-btn" id="closeBtn" aria-label="Close">✕</button>
+        <img id="lightboxImg" src="" alt="Expanded photo">
+      </div>
+      <button class="nav-btn nav-next" id="nextBtn" aria-label="Next">›</button>
+    </div>
+  </div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    const items = Array.from(gallery.querySelectorAll('.card'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    const images = items.map(i => i.querySelector('img').src);
+    const alts = items.map(i => i.querySelector('img').alt || 'Photo');
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      lbImg.src = images[current];
+      lbImg.alt = alts[current];
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      // prevent body scroll
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      // remove src to stop large image loading
+      lbImg.src = '';
+    }
+    function showNext() { current = (current + 1) % images.length; openLightbox(current); }
+    function showPrev() { current = (current - 1 + images.length) % images.length; openLightbox(current); }
+
+    items.forEach((card, idx) => {
+      card.addEventListener('click', () => openLightbox(idx));
+      // keyboard accessibility
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(idx); });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    // close when clicking outside image
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    // keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+      }
+    });
+  </script>
+</body>
+
+</html>
