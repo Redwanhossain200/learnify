@@ -1,89 +1,118 @@
 body {
-  margin: 10px;
+    margin: 10px;
 }
-div{
+
+div {
     background-color: tomato;
     padding: 20px 30px;
     margin-bottom: 12px;
-    border:1px solid black;
-    }
-.two{
+    border: 1px solid black;
+}
+
+.two {
     background-color: aqua;
 }
-.three{
-    background-color:bisque;flex: content;fill-opacity: initial;
+
+.three {
+    background-color: bisque;
+    flex: content;
+    fill-opacity: initial;
 }
-.four{
-    background-color:burlywood;
+
+.four {
+    background-color: burlywood;
 }
-.five{
-background-color: coral;
+
+.five {
+    background-color: coral;
 }
-.six{
+
+.six {
     background-color: cornflowerblue;
 }
-.seven{
+
+.seven {
     background-color: crimson;
 }
-.nine{
+
+.nine {
     background-color: cadetblue;
 }
-.ten{
+
+.ten {
     background-color: chartreuse;
 }
-.eleven{
+
+.eleven {
     background-color: chocolate;
 }
-.twelve{
+
+.twelve {
     background-color: brown;
 }
-.fourteen{
+
+.fourteen {
     background-color: darkcyan;
 }
-.fifteen{
+
+.fifteen {
     background-color: darkgoldenrod;
 }
-.sixteen{
-    background-color:darkgray;
+
+.sixteen {
+    background-color: darkgray;
 }
-.seventeen{
+
+.seventeen {
     background-color: cornsilk;
 }
-.eighteen{
+
+.eighteen {
     background-color: rgb(9, 145, 9);
 }
-.nineteen{
+
+.nineteen {
     background-color: blueviolet;
 }
-.twenty{
+
+.twenty {
     background-color: darkgrey;
 }
-.twenty-one{
+
+.twenty-one {
     background-color: darksalmon;
 }
-.twenty-two{
+
+.twenty-two {
     background-color: darkseagreen;
 }
-.twenty-three{
+
+.twenty-three {
     background-color: olive;
 }
-.twenty-four{
+
+.twenty-four {
     background-color: lightcoral;
 }
-.twenty-five{
+
+.twenty-five {
     background-color: darkkhaki;
 }
-.twenty-six{
+
+.twenty-six {
     background-color: darkmagenta;
 }
-.thirty{
-    background-color:lightgrey;
+
+.thirty {
+    background-color: lightgrey;
 }
-.for{
+
+.for {
     background-color: white;
     border: 0px;
 }
-.nai{
+
+.nai {
     background-color: white;
     border: 0px;
     animation: both;

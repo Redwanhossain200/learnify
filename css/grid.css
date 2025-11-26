@@ -1,8 +1,9 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
-.main{
+
+.main {
   min-width: 300px;
   max-width: 400px;
   min-height: 200px;
@@ -14,25 +15,28 @@
   padding: 2px;
   border: 2px solid black;
   display: grid;
-  grid-template-columns:auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   text-align: center;
   grid-column-gap: 2px;
   grid-row-gap: 2px;
 }
-.main div{
+
+.main div {
   /* padding: 30px; */
   font-size: 20px;
   background-color: wheat;
   border: 1px solid black;
-  
+
 }
-#one{
+
+#one {
   /* grid-column-start: 1;
   grid-column-end: 3; */
   grid-row-start: 1;
   grid-row-end: 8;
 }
-.main2{
+
+.main2 {
   min-width: 300px;
   max-width: 400px;
   min-height: 200px;
@@ -44,19 +48,21 @@
   padding: 2px;
   border: 2px solid black;
   display: grid;
-  grid-template-columns:auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   text-align: center;
   grid-column-gap: 2px;
   grid-row-gap: 2px;
 }
-.main div{
+
+.main div {
   /* padding: 30px; */
   font-size: 20px;
   background-color: wheat;
   border: 1px solid black;
-  
+
 }
-#one{
+
+#one {
   /* grid-column-start: 1;
   grid-column-end: 3; */
   grid-row-start: 1;

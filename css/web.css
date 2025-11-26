@@ -1,61 +1,71 @@
-.main{
+.main {
   width: 500px;
   height: 500px;
-  background-color:orange;;
+  background-color: orange;
+  ;
 }
-#one{
+
+#one {
   width: 500px;
   height: 250px;
 }
-#two{
+
+#two {
   width: 500px;
   height: 250px;
 }
-#three{
+
+#three {
   width: 500px;
   height: 250px;
 }
-.yo{
+
+.yo {
   width: 250px;
   height: 250px;
-  background-color:coral;
+  background-color: coral;
   float: left;
-  text-transform:uppercase;
+  text-transform: uppercase;
   color: white;
-  
+
 }
-.to{
+
+.to {
   width: 250px;
   height: 250px;
-  background-color:sienna;
+  background-color: sienna;
   float: left;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
-.go{
+
+.go {
   width: 250px;
   height: 250px;
-  background-color:chocolate;
+  background-color: chocolate;
   float: left;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
-.no{
+
+.no {
   width: 250px;
   height: 250px;
-  background-color:powderblue;
+  background-color: powderblue;
   float: left;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
-.fo{
+
+.fo {
   width: 250px;
   height: 250px;
-  background-color:tomato;
+  background-color: tomato;
   float: left;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
-.ko{
+
+.ko {
   width: 250px;
   height: 250px;
-  background-color:darkgray;
+  background-color: darkgray;
   float: left;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }

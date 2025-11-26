@@ -1,4 +1,4 @@
-.main{
+.main {
   border: 400px;
   height: 400px;
   border: 2px red solid;
@@ -7,19 +7,22 @@
   resize: both;
   text-indent: 25%;
 }
-h2{
+
+h2 {
   color: blue;
   display: inline-block;
   display: list-item;
 }
-.one{
+
+.one {
   width: 500px;
   height: 500px;
   border: 2px solid green;
   margin: auto;
-  display:inline-table;
+  display: inline-table;
 }
-.one div{
+
+.one div {
   height: 70px;
   width: 500px;
   border: 2px solid red;
