@@ -39,3 +39,9 @@ console.log("Dream big!");
 console.log("Make it happen!");
 
 console.log("Enjoy the journey!");
+
+console.log("Stay positive!");
+
+console.log("Embrace challenges!");
+
+console.log("Learn from mistakes!");
