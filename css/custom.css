@@ -1,119 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    margin: 10px;
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
 }
 
 div {
     background-color: tomato;
     padding: 20px 30px;
-    margin-bottom: 12px;
-    border: 1px solid black;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+div:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+div:active {
+    transform: scale(0.98);
+}
+
+div audio {
+    max-width: 400px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.one {
+    background-color: aquamarine;
+    transition: all 0.1s ease-in;
+}
+
+.one:active {
+    background-color: azure;
 }
 
 .two {
     background-color: aqua;
+    transition: all 0.1s ease-out;
+}
+
+.two:active {
+    background-color: brown;
 }
 
 .three {
     background-color: bisque;
     flex: content;
     fill-opacity: initial;
+    transition: all 0.1s ease-in-out;
+}
+
+.three:active {
+    background-color: black;
+    color: white;
 }
 
 .four {
+    transition: all 0.3s ease-in-out;
     background-color: burlywood;
+}
+
+.four:active {
+    background-color: blue;
+    color: white;
 }
 
 .five {
     background-color: coral;
+    transition: all 0.3s ease-in-out;
+}
+
+.five:active {
+    background-color: darkcyan;
+    color: white;
 }
 
 .six {
     background-color: cornflowerblue;
+    transition: all 0.3s ease-in-out;
+}
+
+.six:active {
+    background-color: darkgoldenrod;
+    color: white;
 }
 
 .seven {
     background-color: crimson;
+    transition: all 0.3s ease-in-out;
+}
+
+.seven:active {
+    background-color: darkgrey;
+    color: white;
+}
+
+.eight {
+    background-color: darkcyan;
+    transition: all 0.3s ease-in-out;
+}
+
+.eight:active {
+    background-color: darkgoldenrod;
+    color: white;
 }
 
 .nine {
     background-color: cadetblue;
+    transition: all 0.3s ease-in-out;
+}
+
+.nine:active {
+    background-color: darkmagenta;
+    color: white;
 }
 
 .ten {
     background-color: chartreuse;
+    transition: all 0.3s ease-in-out;
+}
+
+.ten:active {
+    background-color: darkolivegreen;
+    color: white;
 }
 
 .eleven {
     background-color: chocolate;
+    transition: all 0.3s ease-in-out;
+}
+
+.eleven:active {
+    background-color: darkorange;
+    color: white;
 }
 
 .twelve {
     background-color: brown;
+    transition: all 0.3s ease-in-out;
+}
+
+.twelve:active {
+    background-color: darkred;
+    color: white;
 }
 
 .fourteen {
-    background-color: darkcyan;
+    background-image: url('../Image/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    backdrop-filter: blur(50px);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.fourteen:hover {
+    backdrop-filter: blur(70px);
+    transition: all 0.3s ease-in-out;
 }
 
 .fifteen {
     background-color: darkgoldenrod;
+    transition: all 0.3s ease-in-out;
+}
+
+.fifteen:active {
+    background-color: darkblue;
+    color: white;
 }
 
 .sixteen {
     background-color: darkgray;
+    transition: all 0.3s ease-in-out;
+}
+
+.sixteen:active {
+    background-color: darkgreen;
+    color: white;
 }
 
 .seventeen {
     background-color: cornsilk;
+    transition: all 0.3s ease-in-out;
+}
+
+.seventeen:active {
+    background-color: darkkhaki;
+    color: white;
 }
 
 .eighteen {
     background-color: rgb(9, 145, 9);
+    transition: all 0.3s ease-in-out;
+}
+
+.eighteen:active {
+    background-color: darkslateblue;
+    color: white;
 }
 
 .nineteen {
     background-color: blueviolet;
+    transition: all 0.3s ease-in-out;
+}
+
+.nineteen:active {
+    background-color: darkturquoise;
+    color: white;
 }
 
 .twenty {
     background-color: darkgrey;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty:active {
+    background-color: darkviolet;
+    color: white;
 }
 
 .twenty-one {
     background-color: darksalmon;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty-one:active {
+    background-color: darkslategray;
+    color: white;
 }
 
 .twenty-two {
     background-color: darkseagreen;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty-two:active {
+    background-color: darkslateblue;
+    color: white;
 }
 
 .twenty-three {
     background-color: olive;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty-three:active {
+    background-color: darkorchid;
+    color: white;
 }
 
 .twenty-four {
     background-color: lightcoral;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty-four:active {
+    background-color: darkorange;
+    color: white;
 }
 
 .twenty-five {
     background-color: darkkhaki;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty-five:active {
+    background-color: darkred;
+    color: white;
 }
 
 .twenty-six {
     background-color: darkmagenta;
+    transition: all 0.3s ease-in-out;
+}
+
+.twenty-six:active {
+    background-color: darkcyan;
+    color: white;
 }
 
 .thirty {
     background-color: lightgrey;
+    transition: all 0.3s ease-in-out;
 }
 
-.for {
-    background-color: white;
-    border: 0px;
-}
-
-.nai {
-    background-color: white;
-    border: 0px;
-    animation: both;
+.thirty:active {
+    background-color: darkblue;
+    color: white;
 }

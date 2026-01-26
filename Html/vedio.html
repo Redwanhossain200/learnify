@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music & Video Player</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to right, #020617, #020617ee),
+        url('../Image/Screenshot (6).png') center/cover no-repeat;
+      color: white;
+    }
+
+    /* NAVBAR  */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, .85);
+      padding: 15px 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 span {
+      color: #6366F1;
+      text-shadow: 0 0 15px #6366F1;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav a {
+      color: #9CA3AF;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* HERO  */
+    .hero {
+      background-image: url('../Image/Screenshot\ \(7\).png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #D1D5DB;
+    }
+
+    /* PLAYER  */
+    .player {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 25px;
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, .6);
+      text-align: center;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #6366F140;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .controls button {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 6px;
+      background: #6366F1;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* LIKE */
+    .like-box {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .like-box button {
+      background-color: #6366F1;
+      padding: 10px 20px;
+      font-size: 1.05rem;
+      color: white;
+    }
+
+    .like-box span {
+      color: #F87171;
+      font-size: 1.1rem
+    }
+
+    /* COMMENTS */
+    .comments {
+      margin-top: 30px;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    .comments input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .comments button {
+      padding: 10px 20px;
+      background: #6366F1;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .comments ul {
+      margin-top: 15px;
+      list-style: none;
+    }
+
+    .comments li {
+      background: rgba(255, 255, 255, .1);
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    /* PLAYLIST */
+    .playlist {
+      max-width: 1100px;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, .08);
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card .info {
+      padding: 15px;
+    }
+
+    .card span {
+      color: #9CA3AF;
+      font-size: .9rem
+    }
+
+    /* LOGIN MODAL  */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #020617;
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #6366F140;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background: #6366F1;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .close {
+      text-align: right;
+      cursor: pointer;
+      color: #9CA3AF;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #9CA3AF;
+      background-color: rgba(128, 0, 128, 0.492);
+    }
+
+    /* MOBILE  */
+    @media(max-width:768px) {
+      header {
+        padding: 15px 25px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #020617;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      nav.show {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Music <span>Player</span></h2>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#player">Player</a></li>
+        <li><a href="#playlist">Playlist</a></li>
+        <li><a href="#" onclick="openModal()">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Enjoy Music & Videos</h1>
+    <p>Modern glassmorphism music & video streaming UI</p>
+  </section>
+
+  <section class="player" id="player">
+    <video id="mainVideo" controls poster="../Image/Kaifi Khalil jurmana.jpg">
+      <source src="../Vedio/Kaifi Khalil, jurmana,.mp4">
+    </video>
+
+    <div class="controls">
+      <button onclick="prevVideo()">⏮ Prev</button>
+      <button onclick="togglePlay()">▶ Play / Pause</button>
+      <button onclick="nextVideo()">⏭ Next</button>
+    </div>
+
+    <div class="like-box">
+      <button onclick="likeVideo()">❤️ Like</button>
+      <span id="likeCount">0</span>
+    </div>
+
+    <div class="comments">
+      <h3>Comments</h3>
+      <input id="commentInput" placeholder="Write a comment">
+      <button onclick="addComment()">Post</button>
+      <ul id="commentList"></ul>
+    </div>
+  </section>
+
+  <!-- AUDIO PLAYER -->
+  <section class="player">
+    <h2 style="margin-bottom:10px;">🎧 Audio Player</h2>
+
+    <audio id="audioPlayer" controls>
+      <source src="../Audio/The-Open-Sky-chosic.com_.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="controls">
+      <button onclick="toggleAudio()">▶ Play / Pause</button>
+    </div>
+  </section>
+
+  <section class="playlist" id="playlist">
+    <div class="card" onclick="changeVideo(0)">
+      <img src="../Image/Screenshot (6).png">
+      <div class="info">
+        <h4>Jurmana</h4><span>Kaifi Khalil</span>
+      </div>
+    </div>
+    <div class="card" onclick="changeVideo(1)">
+      <img src="../Image/Screenshot (8).png">
+      <div class="info">
+        <h4>Mansoob</h4><span>Kaifi Khalil</span>
+      </div>
+    </div>
+    <div class="card" onclick="changeVideo(2)">
+      <img src="../Image/Screenshot (7).png">
+      <div class="info">
+        <h4>Faasle</h4><span>Shrey Singhal</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Music Player — All Rights Reserved</footer>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="close" onclick="closeModal()">✖</div>
+      <h3>Login / Signup</h3>
+      <input placeholder="Email">
+      <input placeholder="Password" type="password">
+      <button>Continue</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById("mainVideo");
+
+    /* PLAYLIST */
+    const playlist = [
+      "../Vedio/Kaifi Khalil, jurmana,.mp4",
+      "../Vedio/Kaifi Khalil - Mansoob [Official Music Video].mp4",
+      "../Vedio/Shrey Singhal - Faasle - New Songs 2018 - New Hindi Songs 2018.mp4"
+    ];
+
+    let index = 0;
+
+    /* VIDEO CONTROLS  */
+    function togglePlay() {
+      video.paused ? video.play() : video.pause();
+    }
+
+    function loadVideo() {
+      video.src = playlist[index];
+      video.play();
+    }
+
+    function nextVideo() {
+      index = (index + 1) % playlist.length;
+      loadVideo();
+    }
+
+    function prevVideo() {
+      index = (index - 1 + playlist.length) % playlist.length;
+      loadVideo();
+    }
+
+    function changeVideo(i) {
+      index = i;
+      loadVideo();
+    }
+
+    /* LIKE (REMEMBER)  */
+    let likes = localStorage.getItem("likes")
+      ? parseInt(localStorage.getItem("likes"))
+      : 0;
+
+    document.getElementById("likeCount").innerText = likes;
+
+    function likeVideo() {
+      likes++;
+      localStorage.setItem("likes", likes);
+      document.getElementById("likeCount").innerText = likes;
+    }
+
+    /* COMMENTS (REMEMBER)  */
+    const commentList = document.getElementById("commentList");
+
+    function loadComments() {
+      const saved = JSON.parse(localStorage.getItem("comments")) || [];
+      saved.forEach(text => {
+        const li = document.createElement("li");
+        li.innerText = text;
+        commentList.appendChild(li);
+      });
+    }
+
+    function addComment() {
+      const input = document.getElementById("commentInput");
+      if (input.value.trim() === "") return;
+
+      const li = document.createElement("li");
+      li.innerText = input.value;
+      commentList.appendChild(li);
+
+      const saved = JSON.parse(localStorage.getItem("comments")) || [];
+      saved.push(input.value);
+      localStorage.setItem("comments", JSON.stringify(saved));
+
+      input.value = "";
+    }
+
+    loadComments();
+
+    /*  MOBILE MENU  */
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+
+    /* LOGIN MODAL  */
+    function openModal() {
+      document.getElementById("loginModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("loginModal").style.display = "none";
+    }
+
+    /* AUDIO CONTROLS */
+    const audio = document.getElementById("audioPlayer");
+
+    function toggleAudio() {
+      audio.paused ? audio.play() : audio.pause();
+    }
+
+  </script>
+
+
+</body>
+
+</html>
