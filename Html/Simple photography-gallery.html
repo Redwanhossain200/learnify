@@ -7,8 +7,8 @@
   <meta name="description" content="This is a sample web page structure.">
   <meta name="keywords" content="html, meta tags, web development, form , semantic">
   <meta name="author" content="Redwan Hossain">
-  <link rel="shortcut icon" href="../Image/download.png" type="image/x-icon">
-  <link rel="stylesheet" href="../css/photography-gallery.css">
+  <link rel="shortcut icon" href="https://img.icons8.com/?size=128&id=rUsjZg5GoBPQ&format=png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
   <title>Simple Photography Gallery</title>
 </head>
 
@@ -24,7 +24,6 @@
 
     <main>
       <div class="gallery" id="gallery">
-        <!-- Each .card has data-index so JS can open correct image -->
         <div class="card" data-index="0" tabindex="0">
           <img
             src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
@@ -89,7 +88,6 @@
     </main>
   </div>
 
-  <!-- Lightbox markup -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-content" role="dialog" aria-modal="true">
       <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous">‹</button>
@@ -120,14 +118,12 @@
       lbImg.alt = alts[current];
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
-      // prevent body scroll
       document.body.style.overflow = 'hidden';
     }
     function closeLightbox() {
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      // remove src to stop large image loading
       lbImg.src = '';
     }
     function showNext() { current = (current + 1) % images.length; openLightbox(current); }
@@ -135,7 +131,6 @@
 
     items.forEach((card, idx) => {
       card.addEventListener('click', () => openLightbox(idx));
-      // keyboard accessibility
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(idx); });
     });
 
@@ -143,10 +138,8 @@
     nextBtn.addEventListener('click', showNext);
     prevBtn.addEventListener('click', showPrev);
 
-    // close when clicking outside image
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 
-    // keyboard controls
     document.addEventListener('keydown', (e) => {
       if (lightbox.classList.contains('open')) {
         if (e.key === 'Escape') closeLightbox();

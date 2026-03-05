@@ -46,7 +46,6 @@
    font-size: 13px
  }
 
- /* Gallery Grid */
  .gallery {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
@@ -101,7 +100,6 @@
    color: var(--muted)
  }
 
- /* Lightbox */
  .lightbox {
    position: fixed;
    inset: 0;
@@ -172,7 +170,13 @@
    right: -10px
  }
 
- /* Responsive */
+ .badge {
+   background: rgba(0, 0, 0, 0.45);
+   padding: 6px 10px;
+   border-radius: 999px;
+   font-size: 12px
+ }
+
  @media (max-width:900px) {
    .gallery {
      grid-template-columns: repeat(2, 1fr)
@@ -196,12 +200,4 @@
    .card img {
      height: 260px
    }
- }
-
- /* small caption badge */
- .badge {
-   background: rgba(0, 0, 0, 0.45);
-   padding: 6px 10px;
-   border-radius: 999px;
-   font-size: 12px
  }
