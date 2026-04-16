@@ -1,56 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is a sample web page structure." />
+    <meta
+      name="keywords"
+      content="html, meta tags, web development, form , semantic" />
+    <meta name="author" content="Redwan Hossain" />
+    <title>Glass Login Form</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This is a sample web page structure.">
-  <meta name="keywords" content="html, meta tags, web development, form , semantic">
-  <meta name="author" content="Redwan Hossain">
-  <title>Glass Login Form</title>
-  
-  <link rel="stylesheet" href="login-form.css">
-  
-  <link rel="shortcut icon" href="https://img.icons8.com/?size=96&id=QHq0hEInW8Q5&format=png" type="image/x-icon">
+    <link rel="stylesheet" href="login-form.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=96&id=QHq0hEInW8Q5&format=png"
+      type="image/x-icon" />
 
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  </head>
 
-  <div class="theme-toggle">
-    <i class="fa-solid fa-moon"></i>
-  </div>
+  <body>
+    <div class="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+    </div>
 
-  <div class="container">
-    <h2>Welcome Back</h2>
+    <div class="container">
+      <h2>Welcome Back</h2>
 
-    <form>
+      <form>
+        <div class="input-box">
+          <i class="fa-solid fa-envelope icon"></i>
+          <input type="email" required />
+          <label>Email Address</label>
+        </div>
 
-      <div class="input-box">
-        <i class="fa-solid fa-envelope icon"></i>
-        <input type="email" required>
-        <label>Email Address</label>
-      </div>
+        <div class="input-box">
+          <i class="fa-solid fa-lock icon"></i>
+          <input type="password" required />
+          <label>Password</label>
+        </div>
 
-      <div class="input-box">
-        <i class="fa-solid fa-lock icon"></i>
-        <input type="password" required>
-        <label>Password</label>
-      </div>
+        <button type="submit" class="btn">Login</button>
+        <p class="text">New here? <a href="#">Create Account</a></p>
+      </form>
+    </div>
 
-      <button type="submit" class="btn">Login</button>
-      <p class="text">New here? <a href="#">Create Account</a></p>
-    </form>
-  </div>
-
-  <script>
-    const toggle = document.querySelector(".theme-toggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-    });
-  </script>
-
-</body>
-
+    <script>
+      const toggle = document.querySelector('.theme-toggle');
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+      });
+    </script>
+  </body>
 </html>

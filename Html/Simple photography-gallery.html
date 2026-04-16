@@ -1,153 +1,171 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is a sample web page structure." />
+    <meta
+      name="keywords"
+      content="html, meta tags, web development, form , semantic" />
+    <meta name="author" content="Redwan Hossain" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=128&id=rUsjZg5GoBPQ&format=png"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simple Photography Gallery</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This is a sample web page structure.">
-  <meta name="keywords" content="html, meta tags, web development, form , semantic">
-  <meta name="author" content="Redwan Hossain">
-  <link rel="shortcut icon" href="https://img.icons8.com/?size=128&id=rUsjZg5GoBPQ&format=png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  <title>Simple Photography Gallery</title>
-</head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Simple Photography Gallery</h1>
+          <p>
+            A clean responsive gallery with lightbox — HTML, CSS & minimal JS.
+          </p>
+        </div>
+        <div class="meta">Tip: click an image to open</div>
+      </header>
 
-<body>
-  <div class="container">
-    <header>
-      <div>
-        <h1>Simple Photography Gallery</h1>
-        <p>A clean responsive gallery with lightbox — HTML, CSS & minimal JS.</p>
-      </div>
-      <div class="meta">Tip: click an image to open</div>
-    </header>
+      <main>
+        <div class="gallery" id="gallery">
+          <div class="card" data-index="0" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+              alt="Mountain at sunrise" />
+            <div class="overlay">
+              <div class="caption">Mountain at sunrise</div>
+              <div class="badge">Nature</div>
+            </div>
+          </div>
 
-    <main>
-      <div class="gallery" id="gallery">
-        <div class="card" data-index="0" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
-            alt="Mountain at sunrise">
-          <div class="overlay">
-            <div class="caption">Mountain at sunrise</div>
-            <div class="badge">Nature</div>
+          <div class="card" data-index="1" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+              alt="Forest path" />
+            <div class="overlay">
+              <div class="caption">Forest path</div>
+              <div class="badge">Outdoors</div>
+            </div>
+          </div>
+
+          <div class="card" data-index="2" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+              alt="City skyline at night" />
+            <div class="overlay">
+              <div class="caption">City skyline</div>
+              <div class="badge">Urban</div>
+            </div>
+          </div>
+
+          <div class="card" data-index="3" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+              alt="Desert dunes" />
+            <div class="overlay">
+              <div class="caption">Desert dunes</div>
+              <div class="badge">Landscape</div>
+            </div>
+          </div>
+
+          <div class="card" data-index="4" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+              alt="Seaside cliff" />
+            <div class="overlay">
+              <div class="caption">Seaside cliff</div>
+              <div class="badge">Coast</div>
+            </div>
+          </div>
+
+          <div class="card" data-index="5" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
+              alt="Starry sky" />
+            <div class="overlay">
+              <div class="caption">Starry sky</div>
+              <div class="badge">Night</div>
+            </div>
           </div>
         </div>
-
-        <div class="card" data-index="1" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
-            alt="Forest path">
-          <div class="overlay">
-            <div class="caption">Forest path</div>
-            <div class="badge">Outdoors</div>
-          </div>
-        </div>
-
-        <div class="card" data-index="2" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
-            alt="City skyline at night">
-          <div class="overlay">
-            <div class="caption">City skyline</div>
-            <div class="badge">Urban</div>
-          </div>
-        </div>
-
-        <div class="card" data-index="3" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
-            alt="Desert dunes">
-          <div class="overlay">
-            <div class="caption">Desert dunes</div>
-            <div class="badge">Landscape</div>
-          </div>
-        </div>
-
-        <div class="card" data-index="4" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
-            alt="Seaside cliff">
-          <div class="overlay">
-            <div class="caption">Seaside cliff</div>
-            <div class="badge">Coast</div>
-          </div>
-        </div>
-
-        <div class="card" data-index="5" tabindex="0">
-          <img
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef"
-            alt="Starry sky">
-          <div class="overlay">
-            <div class="caption">Starry sky</div>
-            <div class="badge">Night</div>
-          </div>
-        </div>
-
-      </div>
-    </main>
-  </div>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-content" role="dialog" aria-modal="true">
-      <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous">‹</button>
-      <div style="position:relative;">
-        <button class="close-btn" id="closeBtn" aria-label="Close">✕</button>
-        <img id="lightboxImg" src="" alt="Expanded photo">
-      </div>
-      <button class="nav-btn nav-next" id="nextBtn" aria-label="Next">›</button>
+      </main>
     </div>
-  </div>
 
-  <script>
-    const gallery = document.getElementById('gallery');
-    const items = Array.from(gallery.querySelectorAll('.card'));
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('closeBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-content" role="dialog" aria-modal="true">
+        <button class="nav-btn nav-prev" id="prevBtn" aria-label="Previous">
+          ‹
+        </button>
+        <div style="position: relative">
+          <button class="close-btn" id="closeBtn" aria-label="Close">✕</button>
+          <img id="lightboxImg" src="" alt="Expanded photo" />
+        </div>
+        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next">
+          ›
+        </button>
+      </div>
+    </div>
 
-    const images = items.map(i => i.querySelector('img').src);
-    const alts = items.map(i => i.querySelector('img').alt || 'Photo');
-    let current = 0;
+    <script>
+      const gallery = document.getElementById('gallery');
+      const items = Array.from(gallery.querySelectorAll('.card'));
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const closeBtn = document.getElementById('closeBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
-    function openLightbox(index) {
-      current = index;
-      lbImg.src = images[current];
-      lbImg.alt = alts[current];
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      lbImg.src = '';
-    }
-    function showNext() { current = (current + 1) % images.length; openLightbox(current); }
-    function showPrev() { current = (current - 1 + images.length) % images.length; openLightbox(current); }
+      const images = items.map((i) => i.querySelector('img').src);
+      const alts = items.map((i) => i.querySelector('img').alt || 'Photo');
+      let current = 0;
 
-    items.forEach((card, idx) => {
-      card.addEventListener('click', () => openLightbox(idx));
-      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(idx); });
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    nextBtn.addEventListener('click', showNext);
-    prevBtn.addEventListener('click', showPrev);
-
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.classList.contains('open')) {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') showNext();
-        if (e.key === 'ArrowLeft') showPrev();
+      function openLightbox(index) {
+        current = index;
+        lbImg.src = images[current];
+        lbImg.alt = alts[current];
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
-    });
-  </script>
-</body>
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+      function showNext() {
+        current = (current + 1) % images.length;
+        openLightbox(current);
+      }
+      function showPrev() {
+        current = (current - 1 + images.length) % images.length;
+        openLightbox(current);
+      }
 
+      items.forEach((card, idx) => {
+        card.addEventListener('click', () => openLightbox(idx));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') openLightbox(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', showNext);
+      prevBtn.addEventListener('click', showPrev);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('open')) {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowRight') showNext();
+          if (e.key === 'ArrowLeft') showPrev();
+        }
+      });
+    </script>
+  </body>
 </html>
